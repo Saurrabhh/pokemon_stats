@@ -8,13 +8,24 @@ import '../../models/pokemon/pokemon_detail_model.dart';
 
 class PokemonDetailsController extends ChangeNotifier {
   final List<PokemonDetailModel> _pokemonList = [];
+
+  String searchText = "";
+
   List<PokemonDetailModel> get pokemonList {
     return switch (currentTab) {
-      0 => _userPokemonList + _pokemonList,
-      1 => _userPokemonList,
-      2 => (_userPokemonList + _pokemonList).where((element) => element.isFavourite).toList(),
-      _ => _userPokemonList + _pokemonList,
+      0 => (_userPokemonList + _pokemonList).where((element) => isInSearchText(element)).toList(),
+      1 => _userPokemonList.where((element) => isInSearchText(element)).toList(),
+      2 => (_userPokemonList + _pokemonList)
+          .where((element) => element.isFavourite && isInSearchText(element))
+          .toList(),
+      _ => (_userPokemonList + _pokemonList).where((element) => isInSearchText(element)).toList(),
     };
+  }
+
+  bool isInSearchText(PokemonDetailModel pokemon) {
+    if (searchText.isEmpty) return true;
+    return pokemon.name.toLowerCase().contains(searchText.toLowerCase()) ||
+        pokemon.id.toString().contains(searchText);
   }
 
   final List<PokemonDetailModel> _userPokemonList = [];
@@ -107,6 +118,11 @@ class PokemonDetailsController extends ChangeNotifier {
 
   void switchTabs(int i) {
     currentTab = i;
+    notifyListeners();
+  }
+
+  void onSearchChanged(String s) {
+    searchText = s;
     notifyListeners();
   }
 }

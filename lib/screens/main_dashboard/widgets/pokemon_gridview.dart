@@ -9,19 +9,25 @@ class PokemonGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Provider.of<PokemonDetailsController>(context);
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-        childAspectRatio: 3 / 4,
-      ),
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: controller.pokemonList.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) => PokemonCard(
-        pokemon: controller.pokemonList[index],
-      ),
+    return Column(
+      children: [
+        GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
+            childAspectRatio: 3 / 4,
+          ),
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: controller.pokemonList.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) => PokemonCard(
+            pokemon: controller.pokemonList[index],
+          ),
+        ),
+        const SizedBox(height: 10),
+        if (controller.isLoading) const CircularProgressIndicator(),
+      ],
     );
   }
 }

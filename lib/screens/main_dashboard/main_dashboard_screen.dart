@@ -14,6 +14,7 @@ class MainDashboardScreen extends StatefulWidget {
 class _MainDashboardScreenState extends State<MainDashboardScreen> {
   late ScrollController scrollController;
   late PokemonDetailsController controller;
+  bool _isEditing = false;
   @override
   void initState() {
     controller = Provider.of<PokemonDetailsController>(context, listen: false);
@@ -23,11 +24,20 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
   }
 
   void _scrollListener() {
+    if (controller.currentTab != 0) {
+      return;
+    }
     if (scrollController.offset >= scrollController.position.maxScrollExtent &&
         !scrollController.position.outOfRange &&
         !controller.isLoading) {
       controller.fetchBasicPokemonListFromApi();
     }
+  }
+
+  void _toggleEditing() {
+    setState(() {
+      _isEditing = !_isEditing;
+    });
   }
 
   @override
@@ -43,7 +53,19 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Pokemon Catalogue"),
+          title: _isEditing
+              ? TextField(
+                  onSubmitted: (_) => _toggleEditing(),
+                  autofocus: true,
+                  onChanged: controller.onSearchChanged,
+                )
+              : const Text("Pokemon Catalogue"),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: _toggleEditing,
+            ),
+          ],
           bottom: TabBar(
             onTap: controller.switchTabs,
             tabs: const [
@@ -61,15 +83,9 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
         ),
         body: SingleChildScrollView(
           controller: scrollController,
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: [
-                const PokemonGridView(),
-                const SizedBox(height: 10),
-                if (controller.isLoading) const CircularProgressIndicator(),
-              ],
-            ),
+          child: const Padding(
+            padding: EdgeInsets.all(10),
+            child: PokemonGridView(),
           ),
         ),
       ),
