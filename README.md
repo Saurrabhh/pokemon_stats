@@ -17,41 +17,35 @@ https://github.com/Saurrabhh/yt_shorts_clone/assets/79056681/d01f7cab-f4bd-4ec5-
 <table>
   <tr>
     <td>
-      <h3 align="center">Home Page</h3>
+      <h3 align="center">All Pokemon Page</h3>
       <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/home_page.jpg?raw=true" alt="Home Page" width="200" height=auto/>
+        <img src="https://github.com/Saurrabhh/pokemon_stats/blob/main/screenshots/main.jpg?raw=true" alt="All Pokemon Page" width="200" height=auto/>
       </p>
     </td>
     <td>
-      <h3 align="center">Paginated Loading</h3>
+      <h3 align="center">User Added Pokemon Page</h3>
       <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/paginated_loading.jpg?raw=true" alt="Paginated Loading" width="200" height=auto/>
+        <img src="https://github.com/Saurrabhh/pokemon_stats/blob/main/screenshots/you added.jpg?raw=true" alt="User Added Pokemon Page" width="200" height=auto/>
       </p>
     </td>
     <td>
-      <h3 align="center">Share Video</h3>
+      <h3 align="center">Favourite Pokemon Page</h3>
       <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/share_link.jpg?raw=true" alt="Share Video" width="200" height=auto/>
+        <img src="https://github.com/Saurrabhh/pokemon_stats/blob/main/screenshots/fav.jpg?raw=true" alt="Favourite Pokemon Page" width="200" height=auto/>
       </p>
     </td>
   </tr>
    <tr>
     <td>
-      <h3 align="center">Full Screen Video</h3>
+      <h3 align="center">Search Pokemon</h3>
       <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/fullscreen.jpg?raw=true" alt="Full Screen Video" width="200" height=auto/>
+        <img src="https://github.com/Saurrabhh/pokemon_stats/blob/main/screenshots/search.jpg?raw=true" alt="Search Pokemon" width="200" height=auto/>
       </p>
     </td>
     <td>
-      <h3 align="center">Video Description</h3>
+      <h3 align="center">Add New Pokemon</h3>
       <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/full_description.jpg?raw=true" alt="Video Description" width="200" height=auto/>
-      </p>
-    </td>
-    <td>
-      <h3 align="center">Like Video</h3>
-      <p align="center">
-        <img src="https://github.com/Saurrabhh/yt_shorts_clone/blob/master/app_screenshots/like.jpg?raw=true" alt="Like Video" width="200" height=auto/>
+        <img src="https://github.com/Saurrabhh/pokemon_stats/blob/main/screenshots/add new.jpg?raw=true" alt="Add New Pokemon" width="200" height=auto/>
       </p>
     </td>
   </tr>
