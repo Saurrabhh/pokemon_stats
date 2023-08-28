@@ -8,7 +8,9 @@
 <br>
 
 # Video Demo [Video Link](https://drive.google.com/file/d/1SKszUAaXfgBzfC4bbEJz3N93nAh5ybeS/view?usp=sharing)
-https://github.com/Saurrabhh/yt_shorts_clone/assets/79056681/d01f7cab-f4bd-4ec5-8c14-890392e2cb9e
+https://github.com/Saurrabhh/pokemon_stats/assets/79056681/2a82a5c8-9bbd-43c1-b7de-c667e7a66cbf
+
+
 
 # Apk
 [Apk Link](https://drive.google.com/file/d/1Qr_y4gjIDbMShcilj1uH4EDJzQreWbYB/view?usp=sharing)
